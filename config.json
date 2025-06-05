@@ -3,8 +3,8 @@
     
     "branding": {
       "_comment": "Main header and branding elements",
-      "title": "Training Readiness Monitor",
-      "subtitle": "Hooper Index Assessment for Optimal Training",
+      "title": "Training Readiness Survey",
+      "subtitle": "Based on the Hooper Index Assessment",
       "showBetaLabel": true
     },
   
@@ -39,21 +39,21 @@
     "recommendations": {
       "_comment": "Training recommendations shown based on readiness level",
       "high": {
-        "intensity": "High intensity training recommended",
+        "intensity": "Try to challenge yourself",
         "volume": "Normal to high training volume", 
         "focus": "Skill work, high-intensity intervals, strength training",
         "recovery": "Maintain current recovery protocols"
       },
       "moderate": {
-        "intensity": "Moderate intensity, avoid peak efforts",
-        "volume": "Reduced volume (75-85% of normal)",
+        "intensity": "Moderate intensity, peak efforts may not appropriate",
+        "volume": "Consider reducing volume (ex: work to lower end of the set/rep range)",
         "focus": "Technical skills, moderate aerobic work", 
-        "recovery": "Enhanced recovery protocols recommended"
+        "recovery": "Try to get extra recovery"
       },
       "low": {
-        "intensity": "Low intensity only",
-        "volume": "Significantly reduced volume (50-60% of normal)",
-        "focus": "Active recovery, mobility, light skill work",
+        "intensity": "Low intensity suggested",
+        "volume": "Consider reducing volume (50-60% of normal)",
+        "focus": "Active recovery, mobility, light skill work or a rest day",
         "recovery": "Priority on sleep, nutrition, stress management"
       }
     },
