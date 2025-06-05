@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Activity, Moon, Zap, Heart, Calendar, TrendingUp, AlertTriangle, CheckCircle } from 'lucide-react';
 import config from './config.json';
 
