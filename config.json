@@ -1,0 +1,68 @@
+{
+    "_comment": "Training Readiness Monitor Configuration - Edit these values to customize the app text and branding",
+    
+    "branding": {
+      "_comment": "Main header and branding elements",
+      "title": "Training Readiness Monitor",
+      "subtitle": "Hooper Index Assessment for Optimal Training",
+      "showBetaLabel": true
+    },
+  
+    "instructions": {
+      "_comment": "Instructions shown to users when filling out the assessment",
+      "assessmentDescription": "Rate each factor on waking this morning (1 = very good/low, 5 = very poor/high)"
+    },
+  
+    "buttons": {
+      "_comment": "Button text and help messages",
+      "saveButton": "Save Assessment",
+      "saveHelpText": "Saves to Recent History (resets on page refresh)"
+    },
+  
+    "sections": {
+      "_comment": "Section headings throughout the app",
+      "assessmentDate": "Assessment Date",
+      "hooperAssessment": "Hooper Index Assessment", 
+      "trainingReadiness": "Training Readiness",
+      "todaysRecommendations": "Today's Training Recommendations",
+      "recentHistory": "Recent History"
+    },
+  
+    "metrics": {
+      "_comment": "Labels for the four Hooper Index metrics",
+      "sleepQuality": "Sleep Quality",
+      "stressLevel": "Stress Level", 
+      "fatigueLevel": "Fatigue Level",
+      "muscleSoreness": "Muscle Soreness (DOMS)"
+    },
+  
+    "recommendations": {
+      "_comment": "Training recommendations shown based on readiness level",
+      "high": {
+        "intensity": "High intensity training recommended",
+        "volume": "Normal to high training volume", 
+        "focus": "Skill work, high-intensity intervals, strength training",
+        "recovery": "Maintain current recovery protocols"
+      },
+      "moderate": {
+        "intensity": "Moderate intensity, avoid peak efforts",
+        "volume": "Reduced volume (75-85% of normal)",
+        "focus": "Technical skills, moderate aerobic work", 
+        "recovery": "Enhanced recovery protocols recommended"
+      },
+      "low": {
+        "intensity": "Low intensity only",
+        "volume": "Significantly reduced volume (50-60% of normal)",
+        "focus": "Active recovery, mobility, light skill work",
+        "recovery": "Priority on sleep, nutrition, stress management"
+      }
+    },
+  
+    "recommendationCategories": {
+      "_comment": "Labels for the recommendation categories",
+      "intensity": "Training Intensity",
+      "volume": "Training Volume",
+      "focus": "Recommended Focus", 
+      "recovery": "Recovery Priority"
+    }
+  }

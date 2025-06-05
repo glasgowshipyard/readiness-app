@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Activity, Moon, Zap, Heart, Calendar, TrendingUp, AlertTriangle, CheckCircle } from 'lucide-react';
+import config from '../config.json';
 
 const App = () => {
   const [scores, setScores] = useState({
@@ -32,26 +33,11 @@ const App = () => {
     const readiness = getReadinessLevel();
     
     if (readiness.level === 'High') {
-      return {
-        intensity: 'High intensity training recommended',
-        volume: 'Normal to high training volume',
-        focus: 'Skill work, high-intensity intervals, strength training',
-        recovery: 'Maintain current recovery protocols'
-      };
+      return config.recommendations.high;
     } else if (readiness.level === 'Moderate') {
-      return {
-        intensity: 'Moderate intensity, avoid peak efforts',
-        volume: 'Reduced volume (75-85% of normal)',
-        focus: 'Technical skills, moderate aerobic work',
-        recovery: 'Enhanced recovery protocols recommended'
-      };
+      return config.recommendations.moderate;
     } else {
-      return {
-        intensity: 'Low intensity only',
-        volume: 'Significantly reduced volume (50-60% of normal)',
-        focus: 'Active recovery, mobility, light skill work',
-        recovery: 'Priority on sleep, nutrition, stress management'
-      };
+      return config.recommendations.low;
     }
   };
 
@@ -87,10 +73,12 @@ const App = () => {
         <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
           <div className="flex items-center gap-3 mb-2">
             <Activity className="h-8 w-8 text-blue-600" />
-            <h1 className="text-3xl font-bold text-gray-900">Training Readiness Monitor</h1>
-            <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">BETA</span>
+            <h1 className="text-3xl font-bold text-gray-900">{config.branding.title}</h1>
+            {config.branding.showBetaLabel && (
+              <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">BETA</span>
+            )}
           </div>
-          <p className="text-gray-600">Hooper Index Assessment for Optimal Training</p>
+          <p className="text-gray-600">{config.branding.subtitle}</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -100,7 +88,7 @@ const App = () => {
             <div className="bg-white rounded-lg shadow-sm p-6">
               <div className="flex items-center gap-2 mb-4">
                 <Calendar className="h-5 w-5 text-gray-600" />
-                <h3 className="text-lg font-semibold">Assessment Date</h3>
+                <h3 className="text-lg font-semibold">{config.sections.assessmentDate}</h3>
               </div>
               <input
                 type="date"
@@ -112,15 +100,15 @@ const App = () => {
 
             {/* Hooper Index Questionnaire */}
             <div className="bg-white rounded-lg shadow-sm p-6">
-              <h3 className="text-lg font-semibold mb-4">Hooper Index Assessment</h3>
-              <p className="text-sm text-gray-600 mb-6">Rate each factor on waking this morning (1 = very good/low, 5 = very poor/high)</p>
+              <h3 className="text-lg font-semibold mb-4">{config.sections.hooperAssessment}</h3>
+              <p className="text-sm text-gray-600 mb-6">{config.instructions.assessmentDescription}</p>
               
               <div className="space-y-6">
                 {/* Sleep Quality */}
                 <div>
                   <div className="flex items-center gap-2 mb-3">
                     <Moon className="h-5 w-5 text-blue-600" />
-                    <label className="font-medium">Sleep Quality</label>
+                    <label className="font-medium">{config.metrics.sleepQuality}</label>
                     <span className="text-sm text-gray-500">({scores.sleep}/5)</span>
                   </div>
                   <input
@@ -144,7 +132,7 @@ const App = () => {
                 <div>
                   <div className="flex items-center gap-2 mb-3">
                     <Zap className="h-5 w-5 text-yellow-600" />
-                    <label className="font-medium">Stress Level</label>
+                    <label className="font-medium">{config.metrics.stressLevel}</label>
                     <span className="text-sm text-gray-500">({scores.stress}/5)</span>
                   </div>
                   <input
@@ -168,7 +156,7 @@ const App = () => {
                 <div>
                   <div className="flex items-center gap-2 mb-3">
                     <TrendingUp className="h-5 w-5 text-orange-600" />
-                    <label className="font-medium">Fatigue Level</label>
+                    <label className="font-medium">{config.metrics.fatigueLevel}</label>
                     <span className="text-sm text-gray-500">({scores.fatigue}/5)</span>
                   </div>
                   <input
@@ -192,7 +180,7 @@ const App = () => {
                 <div>
                   <div className="flex items-center gap-2 mb-3">
                     <Heart className="h-5 w-5 text-red-600" />
-                    <label className="font-medium">Muscle Soreness (DOMS)</label>
+                    <label className="font-medium">{config.metrics.muscleSoreness}</label>
                     <span className="text-sm text-gray-500">({scores.soreness}/5)</span>
                   </div>
                   <input
@@ -219,10 +207,10 @@ const App = () => {
                 onClick={saveEntry}
                 className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
               >
-                Save Assessment
+                {config.buttons.saveButton}
               </button>
               <p className="text-xs text-gray-500 mt-2">
-                Saves to Recent History (resets on page refresh)
+                {config.buttons.saveHelpText}
               </p>
             </div>
           </div>
@@ -240,7 +228,7 @@ const App = () => {
                   <AlertTriangle className="h-8 w-8 text-red-600" />
                 )}
                 <div>
-                  <h3 className="text-xl font-bold">Training Readiness</h3>
+                  <h3 className="text-xl font-bold">{config.sections.trainingReadiness}</h3>
                   <p className={`text-lg font-semibold ${readiness.color}`}>{readiness.level}</p>
                 </div>
               </div>
@@ -255,26 +243,26 @@ const App = () => {
 
             {/* Training Recommendations */}
             <div className="bg-white rounded-lg shadow-sm p-6">
-              <h3 className="text-lg font-semibold mb-4">Today's Training Recommendations</h3>
+              <h3 className="text-lg font-semibold mb-4">{config.sections.todaysRecommendations}</h3>
               
               <div className="space-y-4">
                 <div>
-                  <p className="font-medium text-gray-700">Training Intensity</p>
+                  <p className="font-medium text-gray-700">{config.recommendationCategories.intensity}</p>
                   <p className="text-gray-600">{recommendations.intensity}</p>
                 </div>
                 
                 <div>
-                  <p className="font-medium text-gray-700">Training Volume</p>
+                  <p className="font-medium text-gray-700">{config.recommendationCategories.volume}</p>
                   <p className="text-gray-600">{recommendations.volume}</p>
                 </div>
                 
                 <div>
-                  <p className="font-medium text-gray-700">Recommended Focus</p>
+                  <p className="font-medium text-gray-700">{config.recommendationCategories.focus}</p>
                   <p className="text-gray-600">{recommendations.focus}</p>
                 </div>
                 
                 <div>
-                  <p className="font-medium text-gray-700">Recovery Priority</p>
+                  <p className="font-medium text-gray-700">{config.recommendationCategories.recovery}</p>
                   <p className="text-gray-600">{recommendations.recovery}</p>
                 </div>
               </div>
@@ -283,7 +271,7 @@ const App = () => {
             {/* History */}
             {history.length > 0 && (
               <div className="bg-white rounded-lg shadow-sm p-6">
-                <h3 className="text-lg font-semibold mb-4">Recent History</h3>
+                <h3 className="text-lg font-semibold mb-4">{config.sections.recentHistory}</h3>
                 <div className="space-y-3 max-h-64 overflow-y-auto">
                   {history.slice(0, 7).map((entry, index) => (
                     <div key={entry.date} className="flex justify-between items-center p-3 bg-gray-50 rounded">
