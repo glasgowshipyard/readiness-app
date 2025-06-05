@@ -3,28 +3,28 @@
     
     "branding": {
       "_comment": "Main header and branding elements",
-      "title": "Training Readiness Survey",
-      "subtitle": "Based on the Hooper Index Assessment",
+      "title": "Wellness Inventory",
+      "subtitle": "Based on the Hooper Index Assessment & Wellness Inventory from NSCA's Essentials of Personal Training 3rd edition",
       "showBetaLabel": true
     },
   
     "instructions": {
       "_comment": "Instructions shown to users when filling out the assessment",
-      "assessmentDescription": "Rate each factor on waking this morning (1 = very good/low, 5 = very poor/high)"
+      "assessmentDescription": "Rate each factor when you wake up in the morning (1 = very good/low, 5 = very poor/high)"
     },
   
     "buttons": {
       "_comment": "Button text and help messages",
-      "saveButton": "Save Assessment",
+      "saveButton": "Save",
       "saveHelpText": "Saves to Recent History (resets on page refresh)"
     },
   
     "sections": {
       "_comment": "Section headings throughout the app",
-      "assessmentDate": "Assessment Date",
-      "hooperAssessment": "Hooper Index Assessment", 
-      "trainingReadiness": "Training Readiness",
-      "todaysRecommendations": "Today's Training Recommendations",
+      "assessmentDate": "Date",
+      "hooperAssessment": "Wellness Inventory", 
+      "trainingReadiness": "Auto-Regulation Suggestions for Training",
+      "todaysRecommendations": "Today's Recommendations",
       "recentHistory": "Recent History"
     },
   
@@ -39,22 +39,22 @@
     "recommendations": {
       "_comment": "Training recommendations shown based on readiness level",
       "high": {
-        "intensity": "Try to challenge yourself",
+        "intensity": "Try to challenge yourself today!",
         "volume": "Normal to high training volume", 
-        "focus": "Skill work, high-intensity intervals, strength training",
-        "recovery": "Maintain current recovery protocols"
+        "focus": "Skill work, high-intensity intervals, hard strength training",
+        "recovery": "Maintain current recovery routine"
       },
       "moderate": {
-        "intensity": "Moderate intensity, peak efforts may not appropriate",
+        "intensity": "Moderate intensity - might not be the best day for peak efforts",
         "volume": "Consider reducing volume (ex: work to lower end of the set/rep range)",
-        "focus": "Technical skills, moderate aerobic work", 
+        "focus": "Technical skills, moderate aerobic work, moderately hard strengh training", 
         "recovery": "Try to get extra recovery"
       },
       "low": {
         "intensity": "Low intensity suggested",
         "volume": "Consider reducing volume (50-60% of normal)",
-        "focus": "Active recovery, mobility, light skill work or a rest day",
-        "recovery": "Priority on sleep, nutrition, stress management"
+        "focus": "Active recovery, mobility, light strength training or a rest day",
+        "recovery": "High priority on sleep, nutrition, stress management"
       }
     },
   
