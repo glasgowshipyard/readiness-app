@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Activity, Moon, Zap, Heart, Calendar, TrendingUp, AlertTriangle, CheckCircle } from 'lucide-react';
-import config from '../config.json';
+import config from './config.json';
 
 const App = () => {
   const [scores, setScores] = useState({
