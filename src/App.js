@@ -214,14 +214,17 @@ const App = () => {
               </div>
             </div>
 
-            <button
-              onClick={saveEntry}
-              className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
-              title="Save your current assessment to view in Recent History. Note: Data is stored locally and will reset when you refresh the page."
-            >
-              Save Assessment
-              <span className="text-blue-200 text-sm">?</span>
-            </button>
+            <div className="text-center">
+              <button
+                onClick={saveEntry}
+                className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+              >
+                Save Assessment
+              </button>
+              <p className="text-xs text-gray-500 mt-2">
+                Saves to Recent History (resets on page refresh)
+              </p>
+            </div>
           </div>
 
           {/* Right Column - Results */}
