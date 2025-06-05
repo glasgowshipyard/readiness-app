@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Activity, Moon, Zap, Heart, Calendar, TrendingUp, AlertTriangle, CheckCircle } from 'lucide-react';
 
 const App = () => {
@@ -29,7 +29,6 @@ const App = () => {
   };
 
   const getTrainingRecommendations = () => {
-    const hooperIndex = calculateHooperIndex();
     const readiness = getReadinessLevel();
     
     if (readiness.level === 'High') {
